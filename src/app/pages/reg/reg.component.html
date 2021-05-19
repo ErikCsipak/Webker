@@ -1,0 +1,28 @@
+<div class="formContainer">
+    <div class="innerContainer">
+      <span>Regisztráció</span>
+      <form [formGroup]="form" (ngSubmit)="register()" class="loginForm">
+        <mat-form-field class="max-width">
+            <mat-label>Felhasználónév</mat-label>
+            <input type="text" name="name" matInput placeholder="Pl. sanyika12" formControlName="name">
+        </mat-form-field>  
+        <mat-form-field class="max-width">
+            <mat-label>E-mail</mat-label>
+            <input type="email" name="email" matInput placeholder="Pl. sanyika12@gmail.com" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+            <mat-label>Jelszó</mat-label>
+            <input type="password" name="password" matInput placeholder="Jelszó" formControlName="password">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+            <mat-label>Jelszó újra</mat-label>
+            <input type="password" name="passwordCheck" matInput placeholder="Jelszó újra" formControlName="passwordCheck">
+        </mat-form-field>
+        <mat-card id="alertCard" class="alert" *ngIf="alertMessage">
+            {{alertMessage}}
+        </mat-card>
+        <button type="submit" mat-raised-button color="primary" class="max-width" [disabled]="form.invalid">Regisztráció</button>
+        <button (click)="back()" mat-raised-button>Mégsem</button>
+        </form>
+      </div>
+  </div>
