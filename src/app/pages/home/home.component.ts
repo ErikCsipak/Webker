@@ -13,6 +13,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  results?= '';
   
   observations: Observation[] = [];
 
@@ -51,8 +52,10 @@ export class HomeComponent implements OnInit {
               doc.get('component')[17],
               doc.get('component')[18]
             ],
+            'basedOn': doc.get('basedOn'),
             'status': doc.get('status'),
-            'code': doc.get('code')
+            'code': doc.get('code'),
+            'effectiveInstant': doc.get('effectiveInstant')
           };
           this.observations.push(o)
           console.log(o)
@@ -70,7 +73,12 @@ export class HomeComponent implements OnInit {
       this.router.navigateByUrl('/login');
     }
     this.readData()
+
+    this.results = 'observation';
   }
 
+  ngOnDestroy(): void {
+    delete this.results;
+  }
  
 }

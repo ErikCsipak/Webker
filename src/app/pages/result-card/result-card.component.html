@@ -1,19 +1,17 @@
-<div >
+<div *ngIf="obs != null">
     <div  class ="card">
-        <span></span>
-        <form action="">
-            <div>
-                <div>
-
+        <span>{{obs.effectiveInstant}}</span>
+        <form class="resultForm" action="">
+                <div class="resultValueContainerContainer">
+                    <p>Eredmény:</p>
+                    <div *ngFor="let val of obs.component" class="resultValueContainer"><p>{{val.code}}:&nbsp;&nbsp;</p><p>{{val.valueString}}</p></div>
+                    <button class=""type="submit" mat-raised-button color="primary" class="max-width">Módosítás</button>
                 </div>
-                <div>
-
+                <div class="resultBasedOnContainerContainer">
+                    <p>Normál érték:</p>
+                    <div *ngFor="let basedOnVal of obs.basedOn"><p>{{basedOnVal}}</p></div>
+                    <button mat-raised-button class="max-width">Törlés</button>
                 </div>
-            </div>
-            <div class="btnContainer">
-                <button class=""type="submit" mat-raised-button color="primary" class="max-width">Módosítás</button>
-                <button mat-raised-button class="max-width">Törlés</button>
-            </div>
         </form>
     </div>
 </div>
