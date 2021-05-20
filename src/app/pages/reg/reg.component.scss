@@ -60,3 +60,7 @@ span{
    /*change color of underline when focused*/
    background-color: darkslateblue !important;;
   }
+
+button{
+    transition: all .2s ease-in-out;
+}

@@ -9,6 +9,9 @@ import { LoginModule } from './pages/login/login.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { RegModule } from './pages/reg/reg.module';
+import { NavModule } from './pages/nav/nav.module';
+import { ResultCardModule } from './pages/result-card/result-card.module';
+import { NewResultModule } from './pages/new-result/new-result.module';
 
 
 @NgModule({
@@ -22,9 +25,11 @@ import { RegModule } from './pages/reg/reg.module';
     HomeModule,
     LoginModule,
     RegModule,
+    NavModule,
+    ResultCardModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    NewResultModule
   ],
   providers: [],
   bootstrap: [AppComponent]

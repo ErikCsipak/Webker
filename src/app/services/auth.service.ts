@@ -1,39 +1,71 @@
 import { Injectable } from '@angular/core'
+import { FirebaseApp } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import firebase from "firebase/app";
+
+
+
+
 
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService{
-    constructor(private fAuth: AngularFireAuth){}
+    constructor(private router: Router, private fAuth: AngularFireAuth){}
     
-    async logout(): Promise<void>{
-        await this.fAuth.signOut();
+    logout(): void{
+        this.fAuth.signOut().then(
+            res => {
+                console.log('Signed out');
+                
+            },
+            error => {
+                console.log('Failed to sign out')
+            }
+        )
     }
-
-    login(email: string, password: string): Promise<any>{
-        return this.fAuth.signInWithEmailAndPassword(email, password);
+    
+    logoutHome(): void{
+        this.fAuth.signOut().then(
+            res => {
+                console.log('Signed out');
+                this.router.navigateByUrl('/login');
+            },
+            error => {
+                console.log('Failed to sign out')
+            }
+        )
+    }
+    async login(email: string, password: string): Promise<any>{
+        const p = this.fAuth.signInWithEmailAndPassword(email, password);
+        return p;
     }
 
     authenticated(): boolean {
         return this.fAuth.authState !== null;
     }
 
-    currentUserOvservable(): any {
+    currentUserObservable(): any {
         return this.fAuth.authState;
+    }
+
+    getCurrentUser(): string {
+        var user = firebase.auth().currentUser;
+        var email;
+        if(user != null) {
+            email = user.email;
+            if(email != null){
+                return email;
+            }
+        }
+        return ''
     }
 
     async createUser(email: string, password: string, name?: string){
         const res = await this.fAuth.createUserWithEmailAndPassword(email, password);
         return res.user;
     }
-
-    /*
-    Ahol használjuk:
-    constructorba paraméter: private authService: AuthService
-    logout(): void {
-        this.authService.logout();
-    }
-    */
+    
 }

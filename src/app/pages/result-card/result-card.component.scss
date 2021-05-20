@@ -1,0 +1,17 @@
+.card{
+    padding: 10px;
+    background-color: #23272a;
+    min-width: 200px;
+    margin: auto;
+    border-radius: 15px;
+    filter: drop-shadow(0 0mm 1mm rgb(31, 31, 31));
+}
+.btnContainer{
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+button{
+    transition: all .2s ease-in-out;
+}

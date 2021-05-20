@@ -1,0 +1,36 @@
+.card{
+    padding: 10px;
+    background-color: #23272a;
+    margin: auto;
+    border-radius: 15px;
+    filter: drop-shadow(0 0mm 1mm rgb(31, 31, 31));
+    display: table;
+    text-align: center;
+}
+.btnContainer{
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+button{
+    transition: all .2s ease-in-out;
+}
+.inputDivsContainer{
+    display: inline-flex;
+}
+.inputContainer{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -44,7 +44,7 @@ export class RegComponent implements OnInit {
       if(this.form.value.password === this.form.value.passwordCheck){
         this.authService.createUser(this.form.value.email, this.form.value.password).then(
           res => {
-            console.log(res);
+            console.log('User létrejött, nav loginra');
             this.navTo('/login');
           },
           error =>{
@@ -64,6 +64,7 @@ export class RegComponent implements OnInit {
   }
 
   back(): void {
+    console.log('Vissza a loginra')
     this.router.navigateByUrl('/login');
   }
 

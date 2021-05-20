@@ -1,0 +1,117 @@
+<app-nav></app-nav>
+<div >
+    <div  class ="card">
+        <span>Új eredmény felvitele</span>
+        <form [formGroup]="form" (ngSubmit)="saveData()">
+            <div class="inputDivsContainer">
+                <div class="inputContainer">
+                    <mat-form-field class="max-width">
+                        <mat-label>WBC</mat-label>
+                        <input type="number" step="0.01" min="0" name="WBC" matInput placeholder="WBC" formControlName="WBC">
+                    </mat-form-field>
+
+                    <mat-form-field class="max-width">
+                        <mat-label>RBC</mat-label>
+                        <input type="number" step="0.01" min="0" name="RBC" matInput placeholder="RBC" formControlName="RBC">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>HGB</mat-label>
+                        <input type="number" step="0.01" min="0" name="HGB" matInput placeholder="HGB" formControlName="HGB">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>HCT</mat-label>
+                        <input type="number" step="0.01" min="0" name="HCT" matInput placeholder="HCT" formControlName="HCT">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>MCV</mat-label>
+                        <input type="number" step="0.01" min="0" name="MCV" matInput placeholder="MCV" formControlName="MCV">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>MCH</mat-label>
+                        <input type="number" step="0.01" min="0" name="MCH" matInput placeholder="MCH" formControlName="MCH">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>MCHC</mat-label>
+                        <input type="number" step="0.01" min="0" name="MCHC" matInput placeholder="MCHC" formControlName="MCHC">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>PLT</mat-label>
+                        <input type="number" step="0.01" min="0" name="PLT" matInput placeholder="PLT" formControlName="PLT">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>RDWSD</mat-label>
+                        <input type="number" step="0.01" min="0" name="RDWSD" matInput placeholder="RDWSD" formControlName="RDWSD">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>RDWCV</mat-label>
+                        <input type="number" step="0.01" min="0" name="RDWCV" matInput placeholder="RDWCV" formControlName="RDWCV">
+                    </mat-form-field>
+                </div>
+                <div class="inputContainer">
+                    <mat-form-field class="max-width">
+                        <mat-label>PDW</mat-label>
+                        <input type="number" step="0.01" min="0" name="PDW" matInput placeholder="PDW" formControlName="PDW">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>MPV</mat-label>
+                        <input type="number" step="0.01" min="0" name="MPV" matInput placeholder="MPV" formControlName="MPV">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>PCT</mat-label>
+                        <input type="number" step="0.01" min="0" name="PCT" matInput placeholder="PCT" formControlName="PCT">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>NEUT</mat-label>
+                        <input type="number" step="0.01" min="0" name="NEUT" matInput placeholder="NEUT" formControlName="NEUT">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>LYMPH</mat-label>
+                        <input type="number" step="0.01" min="0" name="LYMPH" matInput placeholder="LYMPH" formControlName="LYMPH">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>MONO</mat-label>
+                        <input type="number" step="0.01" min="0" name="MONO" matInput placeholder="MONO" formControlName="MONO">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>EO</mat-label>
+                        <input type="number" step="0.01" min="0" name="EO" matInput placeholder="EO" formControlName="EO">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>BASO</mat-label>
+                        <input type="number" step="0.01" min="0" name="BASO" matInput placeholder="BASO" formControlName="BASO">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="max-width">
+                        <mat-label>IG</mat-label>
+                        <input type="number" step="0.01" min="0" name="IG" matInput placeholder="IG" formControlName="IG">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput type="date" formControlName="DATE" name="DATE">
+                    </mat-form-field>
+                      
+                </div>
+            </div>
+            <div class="btnContainer">
+                <button class=""type="submit" mat-raised-button color="primary" class="max-width">Felvitel</button>
+                <button (click)="back()" mat-raised-button class="max-width">Mégsem</button>
+            </div>
+        </form>
+    </div>
+</div>
