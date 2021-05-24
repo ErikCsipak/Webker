@@ -1,4 +1,5 @@
 export interface Observation{
+    firestoreId?: string,
     resourceType: string,
     id: string,
     text?: Narrative,

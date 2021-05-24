@@ -2,7 +2,7 @@
 <div [ngSwitch]="results" class="container">
     <div *ngSwitchCase="'observation'">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
+          <div class="carousel-inner">
               <ng-container *ngFor="let obs of observations">
                 <ng-container *ngIf="obs === observations[0]">
                   <app-result-card class="carousel-item active" [obs]="obs"></app-result-card>

@@ -5,6 +5,7 @@ import { MatDatepicker } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { Observation } from 'src/app/models/observation';
 import { AuthService } from 'src/app/services/auth.service';
+import { ObservationService } from 'src/app/services/observation.service';
 
 @Component({
   selector: 'app-new-result',
@@ -36,7 +37,7 @@ export class NewResultComponent implements OnInit {
     DATE: new FormControl()
   });
 
-  constructor(private router: Router, private authService: AuthService, private afs: AngularFirestore) { }
+  constructor(private oService: ObservationService<Observation>, private router: Router, private authService: AuthService, private afs: AngularFirestore) { }
   
   saveData(){
     if(this.form.valid){
@@ -150,10 +151,12 @@ export class NewResultComponent implements OnInit {
         'effectiveInstant': this.form.value.DATE
       };
 
-      this.afs.collection('Observations').add(obs).then(res => {
-        console.log('mentés sikeres', res);
+      this.oService.weakAdd(obs).then(res => {
+        this.router.navigateByUrl("/home")
+        alert("Sikeres mentés! :)")
       }).catch(error => {
         console.log('sikertelen mentés', error);
+        alert("Sikertelen mentés! :(")
       }) 
     }
     
@@ -168,7 +171,7 @@ export class NewResultComponent implements OnInit {
  charactersLength)));
    }
    return result.join('');
-}
+  }
 
   ngOnInit(): void {
   }
