@@ -1,6 +1,6 @@
 <app-nav></app-nav>
-<div >
-    <div  class ="card">
+<div>
+    <div class ="card">
         <span>Új eredmény felvitele</span>
         <form [formGroup]="form" (ngSubmit)="saveData()">
             <div class="inputDivsContainer">
@@ -112,6 +112,9 @@
                 <button class=""type="submit" mat-raised-button color="primary" class="max-width">Felvitel</button>
                 <button (click)="back()" mat-raised-button class="max-width">Mégsem</button>
             </div>
+            <mat-card id="alertCard" class="alert container-sm" *ngIf="alertMessage">
+                {{alertMessage}}
+            </mat-card>
         </form>
     </div>
 </div>

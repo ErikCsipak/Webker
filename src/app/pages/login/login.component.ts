@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   @HostListener ('document:keydown.enter') onKeyDownHandler(){
-    console.log('Enter lenyomva')
+    //console.log('Enter lenyomva')
     this.login();
   }
 
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   }
 
   navToRegister(){
-    console.log('Regisztrációs lapra ugrás')
+    //console.log('Regisztrációs lapra ugrás')
     this.router.navigate(['/reg']);
   }
 
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     if(this.form.valid){
       this.authService.login(this.form.value.email, this.form.value.password1).then(
         res => {
-          console.log('Bejelentkezve');
+          //console.log('Bejelentkezve');
           this.navTo('/home');
         },
         error =>{

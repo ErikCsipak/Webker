@@ -18,11 +18,11 @@ export class AuthService{
     logout(): void{
         this.fAuth.signOut().then(
             res => {
-                console.log('Signed out');
+                //console.log('Signed out');
                 
             },
             error => {
-                console.log('Failed to sign out')
+                //console.log('Failed to sign out')
             }
         )
     }
@@ -30,11 +30,11 @@ export class AuthService{
     logoutHome(): void{
         this.fAuth.signOut().then(
             res => {
-                console.log('Signed out');
+                //console.log('Signed out');
                 this.router.navigateByUrl('/login');
             },
             error => {
-                console.log('Failed to sign out')
+                //console.log('Failed to sign out')
             }
         )
     }

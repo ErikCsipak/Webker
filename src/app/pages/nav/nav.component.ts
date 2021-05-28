@@ -13,16 +13,14 @@ export class NavComponent implements OnInit {
 
   constructor(private router: Router, private authService: AuthService) { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   logoutHome(): void {
     this.authService.logoutHome();
   }
 
   logout(): void {
-    console.log('kijelentkezés');
+    //console.log('kijelentkezés');
     this.authService.logout();
   }
 

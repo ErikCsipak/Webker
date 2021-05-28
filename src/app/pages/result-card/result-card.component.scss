@@ -1,5 +1,5 @@
 .card{
-    min-width: 400px;
+    min-width: 40%;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +20,7 @@
 
 button{
     transition: all .2s ease-in-out;
+    margin: 5px;
 }
 @keyframes slideInFromLeft {
     0% {
@@ -34,19 +35,31 @@ button{
   display: inline-flex;
 }
 .resultValueContainerContainer{
+  
+  margin-left: 15px;
+  margin-right: 15px;
   display: inline-flex;
   flex-direction: column;
 }
 .resultBasedOnContainerContainer{
+  
+  margin-left: 15px;
+  margin-right: 15px;
   display: inline-flex;
   flex-direction: column;
 }
+
+
+::ng-deep .mat-form-field .mat-form-field-infix{
+  width: initial;
+}
+
 .resultForm{
   width: 100%;
   display: inline-flex;
   justify-content: space-around;
 }
-span{
+span, .modal-title{
   font-size: larger;
   color: #cccccc;
   font-weight: bold;
@@ -58,4 +71,57 @@ p{
   font-size: medium;
   font-weight: bold;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input{
+  color: #99aab5;
+}
+.modal-header{
+  text-align: center;
+}
+.modal-content{
+  border: initial;
+  border-radius: 15px;
+}
+.modal-header, .modal-body, .modal-footer{
+    background-color: #2a2b2e;
+}
+::ng-deep .mat-form-field-label {
+  /*change color of label*/
+  color: rgb(139, 98, 160) !important;
+ }
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: rgb(93, 86, 136) !important;
+ }
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: rgb(139, 98, 160) !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: darkslateblue !important;;
+}
+
+.alert{
+  max-width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #252629;
+  border-color: #794747;
+  border-style: solid;
+  border-width: 1px;
+  color: #9c6d6d;
+  justify-content: center;
+  margin-top: 15px;
 }

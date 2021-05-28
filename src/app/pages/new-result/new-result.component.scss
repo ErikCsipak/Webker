@@ -1,6 +1,7 @@
 .card{
     animation: 0.5s ease-out 0s 1 slideInFromLeft;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: #2a2b2e;
     margin: auto;
     filter: drop-shadow(0 0mm 1mm rgb(31, 31, 31));
@@ -22,7 +23,6 @@ span{
     width: 100%;
     justify-content: space-around;
 }
-
 button{
     transition: all .2s ease-in-out;
 }
@@ -57,6 +57,9 @@ input[type=number] {
     /*change color of underline*/
     background-color: rgb(139, 98, 160) !important;
   } 
+::ng-deep .mat-form-field .mat-form-field-infix{
+  width: initial;
+}
   
 ::ng-deep.mat-form-field-ripple {
    /*change color of underline when focused*/
@@ -70,3 +73,16 @@ input[type=number] {
       transform: translateX(0);
     }
   }
+
+.alert{
+    max-width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #252629;
+    border-color: #794747;
+    border-style: solid;
+    border-width: 1px;
+    color: #9c6d6d;
+    justify-content: center;
+    margin-top: 15px;
+}

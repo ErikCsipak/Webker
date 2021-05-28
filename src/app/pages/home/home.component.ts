@@ -18,13 +18,11 @@ export class HomeComponent implements OnInit {
   
   observations: Observation[] = [];
 
-  constructor(private oService: ObservationService<Observation> ,private router: Router, private authService: AuthService, private afs: AngularFirestore ) {
-    
-  }
+  constructor(private oService: ObservationService<Observation> ,private router: Router, private authService: AuthService, private afs: AngularFirestore ) {}
   
   ngOnInit(): void {
     if(!this.authService.authenticated()){ 
-      console.log('Autentikálatlan user, vissza a loginra')
+      //console.log('Autentikálatlan user, vissza a loginra')
       this.router.navigateByUrl('/login');
     }
 
@@ -36,7 +34,4 @@ export class HomeComponent implements OnInit {
   ngOnDestroy(): void {
     delete this.results;
   }
-
-  
- 
 }

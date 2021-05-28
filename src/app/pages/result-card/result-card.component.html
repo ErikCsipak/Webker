@@ -1,13 +1,13 @@
-<div *ngIf="obs != null">
+<div class="" *ngIf="obs != null">
     <div  class ="card">
         <span>{{obs.effectiveInstant}}</span>
         <div class="resultForm">
-                <div class="resultValueContainerContainer">
+                <div class="resultValueContainerContainer listed">
                     <p>Eredmény:</p>
                     <div *ngFor="let val of obs.component" class="resultValueContainer"><p>{{val.code}}:&nbsp;&nbsp;</p><p>{{val.valueString}}</p></div>
                     <button mat-raised-button color="primary" data-toggle="modal" [attr.data-target]="'#' + obs.firestoreId" name = "dataUpdateButton" class="max-width">Módosítás</button>
                 </div>
-                <div class="resultBasedOnContainerContainer">
+                <div class="resultBasedOnContainerContainer listed">
                     <p>Normál érték:</p>
                     <div *ngFor="let basedOnVal of obs.basedOn"><p>{{basedOnVal}}</p></div>
                     <button (click)="onDeleteClicked(obs.firestoreId)" mat-raised-button class="max-width" name="dataDeleteButton">Törlés</button>
@@ -131,11 +131,15 @@
                             </mat-form-field>
                         </div>
                     </div>
+                    <mat-card id="alertCard" class="alert container-sm" *ngIf="alertMessage">
+                        {{alertMessage}}
+                    </mat-card>
                 </div>
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal" mat-raised-button class="max-width" name="dataDeleteButton">Mégse</button>
                     <button mat-raised-button color="primary" data-toggle="modal" [attr.data-target]="'#' + obs.firestoreId" name = "dataUpdateButton" class="max-width">Módosítás</button>
                 </div>
+                
             </form>
 
         </div>

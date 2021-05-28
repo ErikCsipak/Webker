@@ -4,9 +4,6 @@ import { HomeComponent } from './home.component';
 import { NavModule } from '../nav/nav.module';
 import { ResultCardModule } from '../result-card/result-card.module';
 
-
-
-
 @NgModule({
   declarations: [
     HomeComponent
