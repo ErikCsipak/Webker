@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, CollectionReference, Query } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Observation } from 'src/app/models/observation';
 import { AuthService } from 'src/app/services/auth.service';
@@ -7,9 +7,10 @@ import { AuthService } from 'src/app/services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ObservationService<T extends { id?: string }> {
 
-  constructor(private afs: AngularFirestore, private authService: AuthService) { }
+  constructor(private afs: AngularFirestore, private authService: AuthService) {}
 
   get(obsArray: Observation[]){
     this.afs.collection('Observations', ref => ref.where('subject', '==', this.authService.getCurrentUser()))
@@ -52,6 +53,7 @@ export class ObservationService<T extends { id?: string }> {
         })
       },
       err =>{
+        //console.log(this.authService.getCurrentUser())
         alert('Hiba a lekérésben')
       }
     )

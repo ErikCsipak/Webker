@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { Observation } from 'src/app/models/observation';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { ObservationService } from 'src/app/services/observation.service';
 
 
@@ -13,9 +11,10 @@ import { ObservationService } from 'src/app/services/observation.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
+
   results?= '';
-  
   observations: Observation[] = [];
 
   constructor(private oService: ObservationService<Observation> ,private router: Router, private authService: AuthService, private afs: AngularFirestore ) {}
@@ -26,9 +25,9 @@ export class HomeComponent implements OnInit {
       this.router.navigateByUrl('/login');
     }
 
-    this.oService.get(this.observations)
-
+    this.oService.get(this.observations);
     this.results = 'observation';
+    
   }
 
   ngOnDestroy(): void {

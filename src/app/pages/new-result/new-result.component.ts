@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDatepicker } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { Observation } from 'src/app/models/observation';
 import { AuthService } from 'src/app/services/auth.service';
@@ -172,8 +171,8 @@ export class NewResultComponent implements OnInit {
         };
 
         this.oService.weakAdd(obs).then(res => {
-          this.router.navigateByUrl("/home")
-          alert("Sikeres mentés! :)")
+          this.router.navigateByUrl("/home");
+          alert("Sikeres mentés! :)");
         }).catch(error => {
           //console.log('sikertelen mentés', error);
           this.alertMessage=this.alertsList.unsuccessful();
@@ -186,8 +185,8 @@ export class NewResultComponent implements OnInit {
   }
 
   makeid(length: number): string {
-    var result           = [];
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var result = [];
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
     for ( var i = 0; i < length; i++ ) {
       result.push(characters.charAt(Math.floor(Math.random() * 
@@ -196,8 +195,7 @@ export class NewResultComponent implements OnInit {
    return result.join('');
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   back(): void {
     this.router.navigateByUrl('/home');

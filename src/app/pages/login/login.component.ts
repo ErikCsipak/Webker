@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -29,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.login();
   }
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.authService.logout();
@@ -53,7 +52,7 @@ export class LoginComponent implements OnInit {
         },
         error =>{
           this.alertMessage=(error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password')
-            ? this.alertsList.user(): this.alertsList.server();
+            ? this.alertsList.user() : this.alertsList.server();
         }
       )
      

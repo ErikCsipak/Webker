@@ -1,4 +1,5 @@
 export interface Observation{
+
     firestoreId?: string,
     resourceType: string,
     id: string,
@@ -29,19 +30,22 @@ export interface Observation{
     method?: CodeableConcept,
     specimen?: string,
     device?: string,
-    referenceRange?: ReferenceRange[]
+    referenceRange?: ReferenceRange[],
     hasMember?: string[],
     derivedFrom?: string[],
     component: Component[]
 }
+
 export interface Extension{
     url?: string,
     value?: string,
 }
+
 export interface Narrative {
     status: string,
     div: string
 }
+
 export interface Identifier{
     use?: "usual" | "official" | "temp" | "secondary" | "old",
     type?: CodeableConcept,
@@ -50,15 +54,18 @@ export interface Identifier{
     period?: Period,
     assigner?: string
 }
+
 export interface CodeableConcept{
     coding?: Coding[],
     text?: String
 }
+
 export interface Annotation{
     time?: string,
     authorString?: string,
     text: string
 }
+
 export interface ReferenceRange{
     low?: SimpleQuantity,
     high?: SimpleQuantity,
@@ -67,12 +74,14 @@ export interface ReferenceRange{
     age?: Range,
     text?: string
 }
+
 export interface Component{
     code: string,
     valueString?: string,
     dataAbsentReason?: CodeableConcept,
     interpretation?: CodeableConcept[]
 }
+
 export interface Meta{
     versionId?: string,
     lastUpdated?: string,
@@ -81,10 +90,12 @@ export interface Meta{
     security?: Coding[],
     tag?: Coding[]
 }
+
 export interface SimpleQuantity{
     value?: number,
     currency?: string
 }
+
 export interface Coding{
     system?: string,
     version?: string,
@@ -92,10 +103,12 @@ export interface Coding{
     display?: string,
     userSelected?: boolean
 }
+
 export interface Period{
     start?: string,
     end?: string
 }
+
 export interface Range{
     low?: SimpleQuantity,
     high?: SimpleQuantity

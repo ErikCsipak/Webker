@@ -25,7 +25,6 @@ export class NavComponent implements OnInit {
   }
 
   navToNewResult(): void{
-    this.router.navigateByUrl('/newResult')
+    this.router.navigateByUrl('/newResult');
   }
-
 }

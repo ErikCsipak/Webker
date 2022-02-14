@@ -9,7 +9,9 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './reg.component.html',
   styleUrls: ['./reg.component.scss']
 })
+
 export class RegComponent implements OnInit {
+
   form: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -26,7 +28,7 @@ export class RegComponent implements OnInit {
     else: () => 'Valami nem stimmel!'
   }
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService) {}
 
   @HostListener ('document:keydown.enter') onKeyDownHandler(){
     this.register();

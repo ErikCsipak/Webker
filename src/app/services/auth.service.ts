@@ -1,13 +1,7 @@
 import { Injectable } from '@angular/core'
-import { FirebaseApp } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import firebase from "firebase/app";
-
-
-
-
-
+import firebase from 'firebase/app';
 
 @Injectable({
     providedIn: 'root'
@@ -19,7 +13,6 @@ export class AuthService{
         this.fAuth.signOut().then(
             res => {
                 //console.log('Signed out');
-                
             },
             error => {
                 //console.log('Failed to sign out')
@@ -38,6 +31,7 @@ export class AuthService{
             }
         )
     }
+
     async login(email: string, password: string): Promise<any>{
         const p = this.fAuth.signInWithEmailAndPassword(email, password);
         return p;
@@ -60,7 +54,7 @@ export class AuthService{
                 return email;
             }
         }
-        return ''
+        return '';
     }
 
     async createUser(email: string, password: string, name?: string){
